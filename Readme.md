@@ -37,7 +37,8 @@ Bladeimg= pygame.image.load(os.path.join(assets_path, 'blade.png'))
 
 Initialize pygame. And upload images.
 
-  class Blade(pygame.sprite.Sprite):
+``` py
+class Blade(pygame.sprite.Sprite):
     def __init__(self, image, center, degree):
         pygame.sprite.Sprite.__init__(self)
         self.base=image
@@ -49,7 +50,6 @@ Initialize pygame. And upload images.
         self.offset = pygame.Vector2(-w//2+20,0)
         self.offset_rotated = (0,0)
         self.degree = degree
-      
     def rotate(self):     
         self.image = pygame.transform.rotozoom(self.base, -self.rot-self.degree, 1)
         self.offset_rotated = self.offset.rotate(self.rot+self.degree)
@@ -58,5 +58,38 @@ Initialize pygame. And upload images.
     def update(self):
         self.rot += self.rot_speed
         self.rotate()
-        
+````
+
 Rotate the image based on the original image. And offset the changes by the rotation around the central axis.
+
+``` py
+blades=pygame.sprite.Group()
+center = (400,250)
+
+blade1 = Blade(Bladeimg, center, 90)
+blade2 = Blade(Bladeimg, center, 180)
+blade3 = Blade(Bladeimg, center, 270)
+blade4 = Blade(Bladeimg, center, 0)
+blades.add(blade1, blade2, blade3, blade4)
+
+width, height = Windmillimg.get_size()
+windmillposition = np.array(CenterPos) - np.array((width/2, height/2-100))
+
+
+done=False
+while not done:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            done = True
+        
+    pygame.display.flip()
+    
+    screen.fill(WHITE)   
+    blades.update()
+    screen.blit(Windmillimg, windmillposition)
+    blades.draw(screen)    
+    clock.tick(60)
+
+
+pygame.quit()
+```
