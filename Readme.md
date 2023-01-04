@@ -5,7 +5,6 @@ Assets are attached
 
 ## Source Code
 
-
   import pygame
   import os
   import numpy as np
@@ -33,6 +32,7 @@ Assets are attached
   Windmillimg= pygame.image.load(os.path.join(assets_path, 'windmill.png'))
   Bladeimg= pygame.image.load(os.path.join(assets_path, 'blade.png'))
 
+
 Initialize pygame. And upload images.
 
   class Blade(pygame.sprite.Sprite):
@@ -47,6 +47,7 @@ Initialize pygame. And upload images.
         self.offset = pygame.Vector2(-w//2+20,0)
         self.offset_rotated = (0,0)
         self.degree = degree
+      
     def rotate(self):     
         self.image = pygame.transform.rotozoom(self.base, -self.rot-self.degree, 1)
         self.offset_rotated = self.offset.rotate(self.rot+self.degree)
