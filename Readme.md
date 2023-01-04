@@ -6,7 +6,7 @@ Assets are attached
 ## Source Code
 
 
-'''py
+''' python
 import pygame
 import os
 import numpy as np
