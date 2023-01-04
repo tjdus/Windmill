@@ -6,34 +6,34 @@ Assets are attached
 ## Source Code
 
 
-  import pygame
-  import os
-  import numpy as np
+'''py
+import pygame
+import os
+import numpy as np
 
-  WINDOW_WIDTH = 800
-  WINDOW_HEIGHT = 600
+WINDOW_WIDTH = 800
+WINDOW_HEIGHT = 600
 
-  GRAY = (200, 200, 200)
-  BLACK = (0,0,0)
-  WHITE = (255,255,255)
+GRAY = (200, 200, 200)
+BLACK = (0,0,0)
+WHITE = (255,255,255)
 
-  CenterPos= WINDOW_WIDTH / 2 , WINDOW_HEIGHT /2
+CenterPos= WINDOW_WIDTH / 2 , WINDOW_HEIGHT /2
 
-  pygame.init()
+pygame.init()
 
-  pygame.display.set_caption("Windmill")
+pygame.display.set_caption("Windmill")
 
-  screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
+screen = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 
-  clock = pygame.time.Clock()
+clock = pygame.time.Clock()
 
-  current_path = os.path.dirname(__file__)
-  assets_path = os.path.join(current_path, 'assets')
+current_path = os.path.dirname(__file__)
+assets_path = os.path.join(current_path, 'assets')
 
-  Windmillimg= pygame.image.load(os.path.join(assets_path, 'windmill.png'))
-  Bladeimg= pygame.image.load(os.path.join(assets_path, 'blade.png'))
-
-
+Windmillimg= pygame.image.load(os.path.join(assets_path, 'windmill.png'))
+Bladeimg= pygame.image.load(os.path.join(assets_path, 'blade.png'))
+'''
 
 Initialize pygame. And upload images.
 
