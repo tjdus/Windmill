@@ -5,6 +5,7 @@ Assets are attached
 
 ## Source Code
 
+
   import pygame
   import os
   import numpy as np
@@ -31,6 +32,7 @@ Assets are attached
 
   Windmillimg= pygame.image.load(os.path.join(assets_path, 'windmill.png'))
   Bladeimg= pygame.image.load(os.path.join(assets_path, 'blade.png'))
+
 
 
 Initialize pygame. And upload images.
