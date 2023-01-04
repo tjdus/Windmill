@@ -6,7 +6,7 @@ Assets are attached
 ## Source Code
 
 
-'''
+``` py
 import pygame
 import os
 import numpy as np
@@ -33,7 +33,7 @@ assets_path = os.path.join(current_path, 'assets')
 
 Windmillimg= pygame.image.load(os.path.join(assets_path, 'windmill.png'))
 Bladeimg= pygame.image.load(os.path.join(assets_path, 'blade.png'))
-'''
+```
 
 Initialize pygame. And upload images.
 
